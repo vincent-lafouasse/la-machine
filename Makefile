@@ -199,4 +199,9 @@ clean:
 #######################################
 -include $(wildcard $(BUILD_DIR)/*.d)
 
+
+## my stuff
+.PHONY: format
+format:
+	clang-format -i $(shell find Core -name '*.c' -or -name '*.h')
 # *** EOF ***

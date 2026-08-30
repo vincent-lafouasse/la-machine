@@ -1,0 +1,4 @@
+BasedOnStyle: Chromium
+
+BreakBeforeBraces: WebKit
+IndentWidth: 4
