@@ -22,6 +22,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include <math.h>
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -44,6 +46,9 @@ DAC_HandleTypeDef hdac;
 DMA_HandleTypeDef hdma_dac1;
 
 TIM_HandleTypeDef htim6;
+
+#define WAVETABLE_SIZE 512
+float k_sine_wt[WAVETABLE_SIZE];
 
 /* USER CODE BEGIN PV */
 
@@ -72,6 +77,10 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
+  for (int i = 0; i < WAVETABLE_SIZE; i++) {
+    const float phase = (2.0f * 3.14159265f * i) / WAVETABLE_SIZE;
+    k_sine_wt[i] = sinf(phase);
+  }
 
   /* USER CODE END 1 */
 
