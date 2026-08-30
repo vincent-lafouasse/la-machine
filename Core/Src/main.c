@@ -66,6 +66,15 @@ static void MX_TIM6_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+static void init_wavetables(void)
+{
+    // i might codegen this later
+    for (int i = 0; i < WAVETABLE_SIZE; i++) {
+        const float phase = (2.0f * 3.14159265f * i) / WAVETABLE_SIZE;
+        k_sine_wt[i] = sinf(phase);
+    }
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -75,11 +84,7 @@ static void MX_TIM6_Init(void);
 int main(void)
 {
     /* USER CODE BEGIN 1 */
-    // i might codegen this later
-    for (int i = 0; i < WAVETABLE_SIZE; i++) {
-        const float phase = (2.0f * 3.14159265f * i) / WAVETABLE_SIZE;
-        k_sine_wt[i] = sinf(phase);
-    }
+    init_wavetables();
 
     /* USER CODE END 1 */
 
