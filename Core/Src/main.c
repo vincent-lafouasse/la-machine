@@ -47,10 +47,9 @@ DMA_HandleTypeDef hdma_dac1;
 
 TIM_HandleTypeDef htim6;
 
+/* USER CODE BEGIN PV */
 #define WAVETABLE_SIZE 512
 float k_sine_wt[WAVETABLE_SIZE];
-
-/* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
 
